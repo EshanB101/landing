@@ -2,6 +2,7 @@
 import Navigation from "../components/Navigation.astro";
 import Head from "../components/Head.astro";
 import Footer from '../components/Footer.astro'
+import astroLogo from '../assets/astro.svg';
 
 const { title } = Astro.props;
 const links = [
@@ -20,7 +21,7 @@ const links = [
 		<Head title={title} />
 	</head>
 	<body class="h-dvh flex flex-col">
-		<Navigation imageUrl="/astro.svg" links={links} />
+		<Navigation imageUrl={astroLogo} links={links} />
 		<slot />
 		<Footer />
 	</body>
