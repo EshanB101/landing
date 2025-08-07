@@ -15,7 +15,7 @@ const {imageUrl, links} = Astro.props;
 
 <header class="bg-white shadow sticky top-0 backdrop-blur-sm">
   <nav class="container m-[0_auto] flex justify-between items-center p-4 bg-white text-black">
-    <Image src={imageUrl} alt="Company Logo" width={100} height={50} />
+    <Image loading="eager" src={imageUrl} alt="Company Logo" width={100} height={50} />
     <ul class="flex items-center space-x-6 text-lg">
       {
         links.map((link: Link, index) => (
