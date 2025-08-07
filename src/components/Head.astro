@@ -1,0 +1,25 @@
+---
+import { SEO } from "astro-seo";
+import { ClientRouter } from "astro:transitions";
+
+const { title } = Astro.props;
+---
+
+<!-- /**
+ * Head.astro
+ * 
+ * Renders SEO meta tags for the page using astro-seo.
+ *
+ * 
+ * @see https://github.com/jonasmerlin/astro-seo
+ ** / -->
+ 
+<SEO 
+    charset="UTF-8"
+    titleDefault="My Landing Page"
+    titleTemplate="%s | My Landing Page"
+    title={title}
+    description="A heavily optimized description full of well-researched keywords." 
+/>
+
+<ClientRouter />
