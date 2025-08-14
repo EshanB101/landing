@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import { Button } from "@/components/ui/button"
 
 import type { Link } from '../models/types';
+import ThemeToggle from './ThemeToggle.astro';
 
 type Props = {
   imageUrl: any;
@@ -20,11 +21,11 @@ const {imageUrl, links} = Astro.props;
       {
         links.map((link: Link, index) => (
           <>
-             <li><a class="hover:text-xl transition-all" href={link.url}>{link.label}</a></li>
-             { 
+            <li><a class="hover:text-xl transition-all" href={link.url}>{link.label}</a></li>
+            { 
               index === links.length - 1 && 
-                <Button className="bg-black text-white cursor-pointer" variant="outline">Button</Button>
-              }
+              <ThemeToggle />
+            }
           </>
         ))
       }
