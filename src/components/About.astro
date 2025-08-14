@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets"
+import astr from "../../public/astro.svg"
+
+  const aboutItems = [
+    {label: 'Title 1', description: 'zblah blah zblah blahzblah blahzblah blahzblah blahzblah'},
+    {label: 'Title 1', description: 'zblah blah zblah blahzblah blahzblah blahzblah blahzblah'},
+    {label: 'Title 1', description: 'zblah blah zblah blahzblah blahzblah blahzblah blahzblah'},
+    {label: 'Title 1', description: 'zblah blah zblah blahzblah blahzblah blahzblah blahzblah'},
+  ]
+---
+<section id="about" class="px-24 py-16 ">
+  <h1 class="text-center text-[90px]">About Us</h1> 
+  <div class="flex space-x-2">
+    {
+      aboutItems.map((item, index) => {
+        return (
+          <div class={'scrolling-section flex flex-col shadow p-24 rounded cursor-pointer mb-12 hover:shadow-2xl' }>
+            <div class="w-[30%]">
+              <Image src={astr} width={50} height={50} class="w-full h-full object-fit" alt="about image"/>
+            </div>
+            <div class="w-[70%]">
+              <p class="text-3xl font-bold mb-4">{item.label}</p>
+              <p class="text-lg text-black/60">{item.description}</p>
+            </div>
+          </div>
+        )
+      })
+    }
+  </div>
+</section>
